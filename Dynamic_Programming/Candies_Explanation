@@ -1,0 +1,42 @@
+/**
+ * Explanation by user jhallock7, on Hackerrank.com/
+ * for Candies problem
+ */
+ 
+I solved this problem differently, but with what I believe 
+is a Dynamic Programming solution. In DP questions, you are
+ asked to calculate F[i] for some i. In this case, F[i] is 
+ the number of candies given to child i. (Then we sum the 
+ values.) The complexity is that the value F[i] depends on
+ other values, in this case for values of i both smaller 
+ and larger. The key to Dynamic Programming is that you
+  calculate the values F[i] in an order such that you 
+  always have the previous values (i.e., dependencies) 
+  you need. So in this problem, what values are needed 
+  to calculate F[i]? Well if Ratings[i] is a local minimum, 
+  that is, child #i has a lower rating than her neighbors, 
+  then we should give her only one candy. So her candy 
+  amount didn’t depend on other candy amounts. If Ratings[i] 
+  is a local maximum, then child #i gets one more candy 
+  than the larger amount of candy between her two neighbors. 
+  If Ratings[i] is between Ratings[i-1] and Ratings[i+1], 
+  then whichever neighbor has a lower rating, child #i gets 
+  one more candy than that neighbor. So in summary, F[i] 
+  depends on 0, 2, or 1 of the adjacent values depending 
+  on whether Ratings[i] is a local minimum, maximum, or 
+  neither, respectively. So to solve this problem, you 
+  can write helper functions is_min(), is_max(), 
+  get_next_min(), and get_next_max(), and use them to find 
+  the first two local mins; set their candies to 1. Find 
+  the single local max between them and iterate inward 
+  from the mins to the max (up the mountain), giving each 
+  child one more candy than the last. Then give the max 
+  child one more candy than the neighbor who got more than 
+  the other. Then repeat by finding the next local max and 
+  min. The other important thing is that if two neighbors 
+  have the same rating, then all the children can be split 
+  into 2 groups between them, and the two groups can be 
+  solved separately. So in a subproblem, adjacent children 
+  will never have the same rating. My solution is here: 
+  https://www.hackerrank.com/challenges/candies/submissions/code/20326952
+

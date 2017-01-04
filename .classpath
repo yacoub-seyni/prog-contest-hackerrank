@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Implementation"/>
+	<classpathentry kind="src" path="Strings"/>
+	<classpathentry kind="src" path="Sorting"/>
+	<classpathentry kind="src" path="Search"/>
+	<classpathentry kind="src" path="Bit_Manipulation"/>
+	<classpathentry kind="src" path="Greedy"/>
+	<classpathentry kind="src" path="Stack"/>
+	<classpathentry kind="src" path="Dynamic_Programming"/>
+	<classpathentry kind="src" path="GraphTheory"/>
+	<classpathentry kind="src" path="ProjectEuler"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
